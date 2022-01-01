@@ -1,26 +1,29 @@
 import { Component } from 'react';
+import { connect } from 'react-redux';
 import { Button } from './components';
+import { incrementAC } from './store/features/counter/actions';
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      counter: 0,
-    };
+  constructor(props) {
+    super(props);
   }
 
   increment = () => {
-    this.setState({ counter: this.state.counter + 1 });
+    this.props.dispatch(incrementAC());
   };
 
   render() {
     return (
       <div className='wrapper'>
         <Button onClick={this.increment}>chat</Button>
-        {this.state.counter}
+        {this.props.counter}
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  counter: state.counter.counter,
+});
+
+export default connect(mapStateToProps)(App);
