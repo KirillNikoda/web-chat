@@ -1,6 +1,6 @@
+import { Auth, Home } from 'pages';
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import { Button } from './components';
 import { incrementAC } from './store/features/counter/actions';
 
 class App extends Component {
@@ -15,10 +15,8 @@ class App extends Component {
   render() {
     return (
       <div className='wrapper'>
-        <Button className='test' onClick={this.increment}>
-          chat
-        </Button>
-        {this.props.counter}
+        <Auth />
+        <Home />
       </div>
     );
   }
