@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { Block } from 'components';
+import { Block } from 'modules/ud-ui';
 import { Form, Input, Button } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 

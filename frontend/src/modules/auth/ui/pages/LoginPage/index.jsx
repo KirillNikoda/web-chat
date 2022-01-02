@@ -1,8 +1,8 @@
-import LoginForm from 'modules/LoginForm';
+import './LoginPage.scss';
 
-import './Auth.scss';
+import LoginForm from 'modules/auth/ui/components/LoginForm';
 
-const Auth = () => {
+const LoginPage = () => {
   return (
     <section className='auth'>
       <div className='auth__content'>
@@ -12,4 +12,4 @@ const Auth = () => {
   );
 };
 
-export default Auth;
+export default LoginPage;
