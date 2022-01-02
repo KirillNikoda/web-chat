@@ -11,7 +11,7 @@ const RegisterForm = () => {
     forceUpdate({});
   }, []);
 
-  const onFinish = (values) => {
+  const onFinish = (values: any) => {
     console.log('Finish:', values);
   };
 
