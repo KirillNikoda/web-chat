@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { Block } from 'modules/ud-ui';
 import { Form, Input, Button } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
 
 const LoginForm = () => {
   const [, forceUpdate] = useState({});
@@ -16,7 +17,7 @@ const LoginForm = () => {
   };
   return (
     <>
-      <div className='auth__top'>
+      <div className='login-page__top'>
         <h2>Войти в аккаунт</h2>
         <p>Пожалуйста, войдите в свой аккаунт</p>
       </div>
@@ -71,9 +72,9 @@ const LoginForm = () => {
               Войти в аккаунт
             </Button>
           </Form.Item>
-          <a href='#' className='auth__register-link'>
+          <Link to='/register' className='login-page__register-link'>
             Зарегистрироваться
-          </a>
+          </Link>
         </Form>
       </Block>
     </>
