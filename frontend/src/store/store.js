@@ -1,10 +1,10 @@
 import { combineReducers, createStore } from 'redux';
 import { counterReducer } from './features/counter/reducer';
 
-const overAllReducer = combineReducers({
+const rootReducer = combineReducers({
   counterState: counterReducer,
 });
 
-const store = createStore(overAllReducer);
+const store = createStore(rootReducer);
 
 export default store;

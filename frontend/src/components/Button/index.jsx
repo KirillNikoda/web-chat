@@ -3,8 +3,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const Button = (props) => {
-  return <BaseButton {...props} className={classNames('button', props.className)} />;
+const Button = ({ children, ...restProps }) => {
+  return (
+    <BaseButton
+      {...restProps}
+      className={classNames('button', restProps.className)}
+    ></BaseButton>
+  );
 };
 
 Button.propTypes = {
