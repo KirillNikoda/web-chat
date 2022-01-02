@@ -15,7 +15,9 @@ class App extends Component {
   render() {
     return (
       <div className='wrapper'>
-        <Button onClick={this.increment}>chat</Button>
+        <Button className='test' onClick={this.increment}>
+          chat
+        </Button>
         {this.props.counter}
       </div>
     );
@@ -23,7 +25,7 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  counter: state.counter.counter,
+  counter: state.counterState.counter,
 });
 
 export default connect(mapStateToProps)(App);

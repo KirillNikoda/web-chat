@@ -1,9 +1,9 @@
 import { DECREMENT, INCREMENT } from './actionTypes';
 
-export const incrementAC = (counterValue) => ({
+export const incrementAC = () => ({
   type: INCREMENT,
 });
 
-export const decrementAC = (counterValue) => ({
+export const decrementAC = () => ({
   type: DECREMENT,
 });
