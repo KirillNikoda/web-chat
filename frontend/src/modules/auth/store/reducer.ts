@@ -1,6 +1,6 @@
 import { Action } from 'redux';
 
-interface AuthState {
+export interface AuthState {
   isAuthenticated: boolean;
 }
 

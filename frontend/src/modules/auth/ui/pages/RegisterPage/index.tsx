@@ -1,4 +1,4 @@
-import RegisterForm from '../../components/RegisterForm';
+import RegisterForm from '@/modules/auth/ui/components/RegisterForm';
 import './RegisterPage.scss';
 
 const RegisterPage = () => {

@@ -1,10 +1,9 @@
+import LoginPage from '@/modules/auth/ui/pages/LoginPage';
+import RegisterPage from '@/modules/auth/ui/pages/RegisterPage';
+import HomePage from '@/modules/home/page';
+import AuthRequired from '@/modules/navigation/guards/AuthRequired';
+import NotAuthRequired from '@/modules/navigation/guards/NotAuth';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
-
-import AuthRequired from './guards/AuthRequired';
-import HomePage from 'modules/home/page';
-import NotAuthRequired from './guards/NotAuth';
-import LoginPage from 'modules/auth/ui/pages/LoginPage';
-import RegisterPage from 'modules/auth/ui/pages/RegisterPage';
 
 const AppRouter = () => {
   return (
