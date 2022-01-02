@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-
-import { Block } from 'modules/ud-ui';
+import { Link } from 'react-router-dom';
 import { Form, Input, Button } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import { Link } from 'react-router-dom';
+
+import { Block } from '@/modules/ud-ui';
 
 const LoginForm = () => {
   const [, forceUpdate] = useState({});
