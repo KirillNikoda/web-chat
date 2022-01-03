@@ -4,7 +4,7 @@ import { BarService } from './bar.service';
 @injectable()
 export class FooService {
   constructor(@inject('BarService') private barService: BarService) {}
-  response() {
+  response(): string {
     return this.barService.process();
   }
 }

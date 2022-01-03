@@ -17,7 +17,9 @@ class FooController implements Controller {
   public index(
     @request() req: express.Request,
     @response() res: express.Response
-  ) {
+  ): string {
+    console.log(req, res);
+
     return this.fooService.response();
   }
 }

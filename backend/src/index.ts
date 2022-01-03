@@ -9,10 +9,8 @@ dotenv.config();
 import './inversify.config';
 import './foo.controller';
 
-console.log(process.env.PORT);
-
 // create server
-let server = new InversifyExpressServer(container);
+const server = new InversifyExpressServer(container);
 server.setConfig((app) => {
   // add body parser
   app.use(
@@ -23,5 +21,5 @@ server.setConfig((app) => {
   app.use(bodyParser.json());
 });
 
-let app = server.build();
+const app = server.build();
 app.listen(process.env.PORT || 8080);
