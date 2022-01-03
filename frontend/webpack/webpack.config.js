@@ -9,6 +9,10 @@ module.exports = {
       '@': path.resolve(__dirname, '..', 'src'),
     },
   },
+  devServer: {
+    port: 3000,
+    historyApiFallback: true,
+  },
   module: {
     rules: [
       {
@@ -37,6 +41,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '..', './build'),
     filename: 'bundle.js',
+    publicPath: '/',
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -45,5 +50,5 @@ module.exports = {
   ],
 
   mode: 'development',
-  stats: 'errors-only',
+  devtool: 'cheap-module-source-map',
 };
