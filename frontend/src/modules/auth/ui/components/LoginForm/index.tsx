@@ -2,11 +2,13 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Form, Input, Button } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-
-import { Block } from '@/modules/ud-ui';
+import { useAppDispatch } from '@modules/core/hooks/store';
+import { setIsAuthenticatedAC } from '@modules/auth/store/actions';
+import { Block } from '@modules/ud-ui';
 
 const LoginForm = () => {
   const [, forceUpdate] = useState({});
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     forceUpdate({});
@@ -21,6 +23,9 @@ const LoginForm = () => {
         <h2>Войти в аккаунт</h2>
         <p>Пожалуйста, войдите в свой аккаунт</p>
       </div>
+      <Button onClick={() => dispatch(setIsAuthenticatedAC(true))}>
+        set is auth
+      </Button>
       <Block>
         <Form
           name='normal_login'

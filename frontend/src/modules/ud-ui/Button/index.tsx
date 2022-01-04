@@ -7,10 +7,9 @@ const Button: React.FC<HTMLAttributes<HTMLButtonElement>> = ({
   ...restProps
 }) => {
   return (
-    <BaseButton
-      {...restProps}
-      className={classNames('button', restProps.className)}
-    ></BaseButton>
+    <BaseButton {...restProps} className={classNames('button', restProps.className)}>
+      {children}
+    </BaseButton>
   );
 };
 

@@ -1,4 +1,4 @@
-import LoginForm from '@/modules/auth/ui/components/LoginForm';
+import LoginForm from '@modules/auth/ui/components/LoginForm';
 import './LoginPage.scss';
 
 const LoginPage = () => {

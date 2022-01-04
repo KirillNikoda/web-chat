@@ -1,1 +1,1 @@
-export default 1;
+export const SET_IS_AUTHENTICATED = 'SET_IS_AUTHENTICATED';
