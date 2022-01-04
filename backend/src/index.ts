@@ -8,6 +8,7 @@ dotenv.config();
 
 import './inversify.config';
 import './foo.controller';
+import '@modules/auth/controller/auth.controller';
 
 // create server
 const server = new InversifyExpressServer(container);

@@ -6,7 +6,7 @@ module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
     alias: {
-      '@': path.resolve(__dirname, '..', 'src'),
+      '@modules': path.resolve(__dirname, '..', 'src', 'modules'),
     },
   },
   devServer: {

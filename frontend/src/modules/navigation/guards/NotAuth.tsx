@@ -1,4 +1,4 @@
-import { isAuthenticated } from '@/modules/auth/store/selectors';
+import { isAuthenticated } from '@modules/auth/store/selectors';
 import { useSelector } from 'react-redux';
 import { Redirect, Route } from 'react-router';
 
