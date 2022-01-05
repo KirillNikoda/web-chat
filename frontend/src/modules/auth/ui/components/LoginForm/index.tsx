@@ -2,13 +2,14 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Form, Input, Button } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import { useAppDispatch } from '@modules/core/hooks/store';
-import { setIsAuthenticatedAC } from '@modules/auth/store/actions';
 import { Block } from '@modules/ud-ui';
+import styles from './LoginForm.module.scss';
+import classNames from 'classnames';
 
 const LoginForm = () => {
   const [, forceUpdate] = useState({});
-  const dispatch = useAppDispatch();
+
+  console.log(styles.test);
 
   useEffect(() => {
     forceUpdate({});
@@ -19,14 +20,11 @@ const LoginForm = () => {
   };
   return (
     <>
-      <div className='login-page__top'>
+      <div className={styles['login-page__top']}>
         <h2>Войти в аккаунт</h2>
         <p>Пожалуйста, войдите в свой аккаунт</p>
       </div>
-      <Button onClick={() => dispatch(setIsAuthenticatedAC(true))}>
-        set is auth
-      </Button>
-      <Block>
+      <Block className={styles.loginFormBlock}>
         <Form
           name='normal_login'
           className='login-form'
@@ -71,13 +69,13 @@ const LoginForm = () => {
             <Button
               type='primary'
               htmlType='submit'
-              className='button login-form-button'
+              className={classNames(styles.loginFormButton)}
               size='large'
             >
               Войти в аккаунт
             </Button>
           </Form.Item>
-          <Link to='/register' className='login-page__register-link'>
+          <Link to='/register' className={styles.registerLink}>
             Зарегистрироваться
           </Link>
         </Form>
