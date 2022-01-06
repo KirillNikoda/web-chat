@@ -1,10 +1,10 @@
 import LoginForm from '@modules/auth/ui/components/LoginForm';
-import './LoginPage.scss';
+import styles from './LoginPage.module.scss';
 
 const LoginPage = () => {
   return (
-    <section className='login-page'>
-      <div className='login-page__content'>
+    <section className={styles.loginPage}>
+      <div className={styles.loginPageContent}>
         <LoginForm />
       </div>
     </section>
