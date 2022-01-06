@@ -1121,6 +1121,11 @@
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
 
+"@snap-alex/domain-js@^8.1.2":
+  version "8.1.2"
+  resolved "https://registry.yarnpkg.com/@snap-alex/domain-js/-/domain-js-8.1.2.tgz#aa1c77b277573b8619dd2fe721479cbef5ede216"
+  integrity sha512-NedKFCzDEOT93QjgM+tPctIA181ivEDKJ7HIN/c75XkdUkDZRiTXn3Md6yacfYbCTDTgA5FlMIfvrs8Tacxn5Q==
+
 "@socket.io/component-emitter@~3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@socket.io/component-emitter/-/component-emitter-3.0.0.tgz#8863915676f837d9dad7b76f50cb500c1e9422e9"
