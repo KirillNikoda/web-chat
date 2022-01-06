@@ -1,15 +1,13 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Form, Input, Button } from 'antd';
-import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import { MailOutlined, LockOutlined } from '@ant-design/icons';
 import { Block } from '@modules/ud-ui';
 import styles from './LoginForm.module.scss';
 import classNames from 'classnames';
 
 const LoginForm = () => {
   const [, forceUpdate] = useState({});
-
-  console.log(styles.test);
 
   useEffect(() => {
     forceUpdate({});
@@ -18,13 +16,14 @@ const LoginForm = () => {
   const onFinish = (values: any) => {
     console.log('Finish:', values);
   };
+
   return (
     <>
-      <div className={styles['login-page__top']}>
+      <div className={styles.loginFormTop}>
         <h2>Войти в аккаунт</h2>
         <p>Пожалуйста, войдите в свой аккаунт</p>
       </div>
-      <Block className={styles.loginFormBlock}>
+      <Block className={styles.loginForm}>
         <Form
           name='normal_login'
           className='login-form'
@@ -35,17 +34,17 @@ const LoginForm = () => {
         >
           <Form.Item
             hasFeedback
-            name='username'
+            name='email'
             rules={[
               {
                 required: true,
-                message: 'Пожалуйста, введите имя пользователя!',
+                message: 'Пожалуйста, введите ваш e-mail!',
               },
             ]}
           >
             <Input
-              prefix={<UserOutlined className='site-form-item-icon' />}
-              placeholder='Username'
+              prefix={<MailOutlined className='site-form-item-icon' />}
+              placeholder='E-mail'
             />
           </Form.Item>
           <Form.Item
@@ -61,7 +60,7 @@ const LoginForm = () => {
             <Input
               prefix={<LockOutlined className='site-form-item-icon' />}
               type='password'
-              placeholder='Password'
+              placeholder='Пароль'
             />
           </Form.Item>
 
