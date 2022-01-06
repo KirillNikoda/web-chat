@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Form, Input, Button } from 'antd';
-import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import { UserOutlined, LockOutlined, MailOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import { Block } from '@modules/ud-ui';
+import styles from './RegisterPage.module.scss';
 
 const RegisterForm = () => {
   const [, forceUpdate] = useState({});
@@ -17,11 +18,11 @@ const RegisterForm = () => {
 
   return (
     <>
-      <div className='login-page__top'>
-        <h2>Войти в аккаунт</h2>
-        <p>Пожалуйста, войдите в свой аккаунт</p>
+      <div className={styles.loginFormTop}>
+        <h2>Регистрация</h2>
+        <p>Для входа в чат, нужно зарегистрироваться</p>
       </div>
-      <Block>
+      <Block className={styles.loginForm}>
         <Form
           name='normal_login'
           className='login-form'
@@ -30,6 +31,21 @@ const RegisterForm = () => {
           }}
           onFinish={onFinish}
         >
+          <Form.Item
+            hasFeedback
+            name='email'
+            rules={[
+              {
+                required: true,
+                message: 'Пожалуйста, введите ваш e-mail!',
+              },
+            ]}
+          >
+            <Input
+              prefix={<MailOutlined className='site-form-item-icon' />}
+              placeholder='E-mail'
+            />
+          </Form.Item>
           <Form.Item
             hasFeedback
             name='username'
@@ -42,7 +58,7 @@ const RegisterForm = () => {
           >
             <Input
               prefix={<UserOutlined className='site-form-item-icon' />}
-              placeholder='Username'
+              placeholder='Имя пользователя'
             />
           </Form.Item>
           <Form.Item
@@ -58,22 +74,37 @@ const RegisterForm = () => {
             <Input
               prefix={<LockOutlined className='site-form-item-icon' />}
               type='password'
-              placeholder='Password'
+              placeholder='Пароль'
             />
           </Form.Item>
-
+          <Form.Item
+            hasFeedback
+            name='repeat-password'
+            rules={[
+              {
+                required: true,
+                message: 'Пожалуйста, повторите пароль!',
+              },
+            ]}
+          >
+            <Input
+              prefix={<LockOutlined className='site-form-item-icon' />}
+              type='password'
+              placeholder='Повторите пароль'
+            />
+          </Form.Item>
           <Form.Item>
             <Button
               type='primary'
               htmlType='submit'
-              className='button login-form-button'
+              className={styles.loginFormButton}
               size='large'
             >
-              Войти в аккаунт
+              Зарегистрироваться
             </Button>
           </Form.Item>
-          <Link to='/register' className='login-page__register-link'>
-            Зарегистрироваться
+          <Link to='/login' className={styles.registerLink}>
+            Войти в аккаунт
           </Link>
         </Form>
       </Block>

@@ -1,10 +1,12 @@
 import RegisterForm from '@modules/auth/ui/components/RegisterForm';
-import './RegisterPage.scss';
+import styles from './RegisterPage.module.scss';
 
 const RegisterPage = () => {
   return (
-    <section className='register-page'>
-      <RegisterForm />
+    <section className={styles.registerPage}>
+      <div className={styles.registerPageContent}>
+        <RegisterForm />
+      </div>
     </section>
   );
 };
